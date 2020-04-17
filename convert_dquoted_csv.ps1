@@ -10,6 +10,7 @@ $ErrorActionPreference = "stop"
 $parentDir = Split-Path -Parent $fileName
 $fileNameWithoutExtension = [System.IO.Path]::GetFileNameWithoutExtension($fileName);
 $outputFileName = Join-Path $parentDir $fileNameWithoutExtension"_dquote.csv"
+Write-Host $outputFileName
 
 Import-Csv -Encoding Default $fileName |`
 Export-Csv -Encoding Default -NoTypeInformation $outputFileName
